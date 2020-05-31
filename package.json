@@ -1,0 +1,51 @@
+{
+  "name": "sinon-assert-stub",
+  "version": "0.1.0",
+  "description": "Nice assertions for sinon stubs",
+  "main": "build/index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:peterjwest/sinon-assert-stub.git"
+  },
+  "files": [
+    "/build"
+  ],
+  "author": "Peter West",
+  "bugs": {
+    "url": "https://github.com/peterjwest/sinon-assert-stub/issues"
+  },
+  "keywords": [
+    "sinon",
+    "assert",
+    "assertion",
+    "stub",
+    "spy",
+    "mock"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/peterjwest/sinon-assert-stub#readme",
+  "scripts": {
+    "audit-dependencies": "yarn audit; [[ $? -ge 4 ]] && exit 1 || exit 0",
+    "build": "tsc --project tsconfig.json",
+    "lint:ts": "tslint --format verbose --project tsconfig.json",
+    "test:coverage": "rm -rf coverage && NODE_DEBUG=nyc nyc mocha 'tests/**/*.ts'",
+    "test:unit": "mocha --require ts-node/register 'tests/**/*.ts'"
+  },
+  "dependencies": {
+    "sinon": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/mocha": "5.2.7",
+    "@types/node": "^14.0.6",
+    "@types/sinon": "^9.0.4",
+    "mocha": "^6.1.4",
+    "mocha-circleci-reporter": "^0.0.3",
+    "nyc": "14.1.1",
+    "ts-node": "8.4.1",
+    "tslint": "5.20.0",
+    "tslint-eslint-rules": "5.4.0",
+    "typescript": "3.5.2",
+    "typescript-tslint-plugin": "0.5.4"
+  }
+}
