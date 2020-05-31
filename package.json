@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Nice assertions for sinon stubs",
   "main": "build/index.js",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git@github.com:peterjwest/sinon-assert-stub.git"
