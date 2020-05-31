@@ -30,7 +30,7 @@ export function errorEquals(expectedError: Error) {
 }
 
 // "Quis custodiet ipsos custodes"
-describe("sinon-assert-stub", () => {
+describe('sinon-assert-stub', () => {
   describe('captureError', () => {
     it('Returns the error thrown by the callback', () => {
       assert.deepStrictEqual(captureError(() => { throw new Error('Some error'); }), new Error('Some error'));
