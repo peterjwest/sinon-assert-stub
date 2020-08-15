@@ -1,5 +1,5 @@
-import * as assert from 'assert';
-import * as sinon from 'sinon';
+import assert from 'assert';
+import sinon from 'sinon';
 
 /** Asserts that a spy was not called */
 export function notCalled(spy: sinon.SinonSpy) {
