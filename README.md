@@ -16,15 +16,30 @@ yarn add sinon-assert-stub
 
 Pass a sinon stub to the assertion function to check it, for example this checks that a stub function is called twice with specific arguments:
 
+<!-- snippet: ts,es6 -->
 ```js
-import { calledWith } from 'sinon-assert-stub';
-import * as sinon from 'sinon';
+import assertStub from 'sinon-assert-stub';
+import sinon from 'sinon';
 
 const stub = sinon.stub();
 stub('foo');
 stub('bar', 'zim');
 
-calledWith(stub, [['foo'], ['bar', 'zim']]);
+assertStub.calledWith(stub, [['foo'], ['bar', 'zim']]);
+```
+
+### With CommonJS / require()
+
+<!-- snippet: js -->
+```js
+const assertStub = require('sinon-assert-stub');
+const sinon = require('sinon');
+
+const stub = sinon.stub();
+stub('foo');
+stub('bar', 'zim');
+
+assertStub.calledWith(stub, [['foo'], ['bar', 'zim']]);
 ```
 
 ## Methods
@@ -33,83 +48,111 @@ calledWith(stub, [['foo'], ['bar', 'zim']]);
 
 Asserts the stub was called exactly once:
 
+<!-- snippet: ts,es6 -->
 ```js
+import assertStub from 'sinon-assert-stub';
+import sinon from 'sinon';
+
 const stub = sinon.stub();
 stub('foo');
 
-calledOnce(stub);
+assertStub.calledOnce(stub);
 ```
 
 ### notCalled
 
 Asserts the stub was never called:
 
+<!-- snippet: ts,es6 -->
 ```js
+import assertStub from 'sinon-assert-stub';
+import sinon from 'sinon';
+
 const stub = sinon.stub();
 
-notCalled(stub);
+assertStub.notCalled(stub);
 ```
 
 ### calledWith
 
 Asserts the stub was called an exact number of times with specified arguments:
 
+<!-- snippet: ts,es6 -->
 ```js
+import assertStub from 'sinon-assert-stub';
+import sinon from 'sinon';
+
 const stub = sinon.stub();
 
 stub('foo');
 stub('bar', 'zim');
 
-calledWith(stub, [['foo'], ['bar', 'zim']]);
+assertStub.calledWith(stub, [['foo'], ['bar', 'zim']]);
 ```
 
 ### calledOnceWith
 
 Asserts the stub was called an once with specified arguments:
 
+<!-- snippet: ts,es6 -->
 ```js
+import assertStub from 'sinon-assert-stub';
+import sinon from 'sinon';
+
 const stub = sinon.stub();
 
 stub('bar', 'zim');
 
-calledOnceWith(stub, ['bar', 'zim']);
+assertStub.calledOnceWith(stub, ['bar', 'zim']);
 ```
 
 ### calledStartingWith
 
-Asserts that the stub was called an exact number of times _starting_ with specified arguments:
+Asserts that the stub was called an exact number of times _starting_ with specified arguments, any additional arguments are ignored:
 
+<!-- snippet: ts,es6 -->
 ```js
+import assertStub from 'sinon-assert-stub';
+import sinon from 'sinon';
+
 const stub = sinon.stub();
 
 stub('foo', 1, 2, 3);
 stub('bar', 'zim');
 
-calledStartingWith(stub, [['foo'], ['bar', 'zim']]);
+assertStub.calledStartingWith(stub, [['foo'], ['bar', 'zim']]);
 ```
 
 ### calledOnceStartingWith
 
 Asserts that the stub was called once _starting_ with specified arguments:
 
+<!-- snippet: ts,es6 -->
 ```js
+import assertStub from 'sinon-assert-stub';
+import sinon from 'sinon';
+
 const stub = sinon.stub();
 
 stub('foo', 1, 2, 3);
 
-calledOnceStartingWith(stub, ['foo']);
+assertStub.calledOnceStartingWith(stub, ['foo']);
 ```
 
 ### notOtherwiseCalled
 
 Asserts the stub was not called with unexpected arguments. This assertion is a bit different because it is designed to be used with `withArgs` and needs to be called _before_ the test case:
 
+<!-- snippet: ts,es6 -->
 ```js
+import assertStub from 'sinon-assert-stub';
+import sinon from 'sinon';
+
 const stub = sinon.stub();
 stub.withArgs('foo').returns(true);
 stub.withArgs('bar', 'zim').returns(true);
 
-notOtherwiseCalled(stub, 'stub');
+assertStub.notOtherwiseCalled(stub, 'stub');
 
 stub('foo');
 stub('bar', 'zim');

@@ -35,7 +35,8 @@
     "build:es5": "rm -rf build/es5 && tsc --project tsconfig-build-es5.json && convert-extension cjs build/es5",
     "lint:ts": "tslint --format verbose --project tsconfig.json",
     "test:coverage": "rm -rf coverage && NODE_DEBUG=nyc nyc mocha 'tests/**/*.ts'",
-    "test:unit": "mocha --require ts-node/register 'tests/**/*.ts'"
+    "test:unit": "mocha --require ts-node/register 'tests/**/*.ts'",
+    "test:snippets": "test-snippets"
   },
   "dependencies": {
     "sinon": "^9.0.2"
@@ -44,10 +45,11 @@
     "@types/mocha": "5.2.7",
     "@types/node": "^14.0.6",
     "@types/sinon": "^9.0.4",
-    "mocha": "^6.1.4",
     "convert-extension": "^0.2.1",
+    "mocha": "^8.1.1",
     "mocha-circleci-reporter": "^0.0.3",
     "nyc": "14.1.1",
+    "test-snippets": "^0.1.0",
     "ts-node": "8.4.1",
     "tslint": "5.20.0",
     "tslint-eslint-rules": "5.4.0",
