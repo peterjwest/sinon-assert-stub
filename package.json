@@ -7,6 +7,9 @@
     "import": "./build/es6/index.mjs",
     "require": "./build/wrapper.js"
   },
+  "engines": {
+    "node": ">=10"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:peterjwest/sinon-assert-stub.git"
