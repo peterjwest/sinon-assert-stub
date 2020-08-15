@@ -122,5 +122,5 @@ stub('bar', 'zim');
 [circle-badge]: https://circleci.com/gh/peterjwest/sinon-assert-stub.svg?style=shield
 [circle-url]: https://circleci.com/gh/peterjwest/sinon-assert-stub
 
-[coverage-badge]: https://coveralls.io/repos/peterjwest/sinon-assert-stub/badge.svg?branch=master&service=github
-[coverage-url]: https://coveralls.io/github/peterjwest/sinon-assert-stub?branch=master
+[coverage-badge]: https://coveralls.io/repos/peterjwest/sinon-assert-stub/badge.svg?branch=main&service=github
+[coverage-url]: https://coveralls.io/github/peterjwest/sinon-assert-stub?branch=main
