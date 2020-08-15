@@ -1,6 +1,6 @@
 {
   "name": "sinon-assert-stub",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Nice assertions for sinon stubs",
   "main": "./build/wrapper.js",
   "exports": {
