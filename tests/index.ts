@@ -16,8 +16,11 @@ import {
 export function captureError(callback: () => void): Error {
   try {
     callback();
-  } catch (error) {
-    return error;
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return error;
+    }
+    throw error;
   }
   throw new Error('Expected callback to throw an error');
 }

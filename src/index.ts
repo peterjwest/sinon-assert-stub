@@ -18,12 +18,12 @@ export function calledOnceWith<Type>(spy: sinon.SinonSpy, args: Type[]) {
 }
 
 /** Asserts that a spy was called exactly with the arguments specified in each entry of `calls` */
-export function calledWith<Type>(spy: sinon.SinonSpy, calls: Type[][]) {
+export function calledWith<Type>(spy: sinon.SinonSpy<Type[]>, calls: Type[][]) {
   assert.deepStrictEqual(spy.getCalls().map((call) => call.args), calls);
 }
 
 /** Asserts that a spy was called starting with the arguments specified in each entry of `calls` */
-export function calledStartingWith<Type>(spy: sinon.SinonSpy, calls: Type[][]) {
+export function calledStartingWith<Type>(spy: sinon.SinonSpy<Type[]>, calls: Type[][]) {
   const actualCalls = spy.getCalls().map((call) => call.args);
   const startingWithCalls = actualCalls.map((args, i) => calls[i] ? args.slice(0, calls[i].length) : args);
   assert.deepStrictEqual(startingWithCalls, calls);
