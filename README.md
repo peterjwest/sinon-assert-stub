@@ -7,10 +7,6 @@ Nice assertions for sinon stubs.
 ```bash
 npm install sinon-assert-stub
 ```
-or
-```bash
-yarn add sinon-assert-stub
-```
 
 ## Usage
 
@@ -157,7 +153,6 @@ assertStub.notOtherwiseCalled(stub, 'stub');
 stub('foo');
 stub('bar', 'zim');
 ```
-
 
 [npm-badge]: https://badge.fury.io/js/sinon-assert-stub.svg
 [npm-url]: https://www.npmjs.com/package/sinon-assert-stub
