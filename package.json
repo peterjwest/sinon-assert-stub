@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Nice assertions for sinon stubs",
   "type": "module",
-  "main": "./build/wrapper.cjs",
+  "main": "./build/code/index.js",
   "exports": {
     "import": "./build/code/index.js",
     "require": "./build/wrapper.cjs"
