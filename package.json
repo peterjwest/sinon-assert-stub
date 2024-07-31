@@ -36,6 +36,7 @@
     "build": "rm -rf build/code && tsup src/index.ts --format cjs,esm --dts --out-dir build/code",
     "lint:ts": "eslint .",
     "lint:dependencies": "depcheck",
+    "lint:unlinted": "unlinted",
     "test:coverage": "vitest run --coverage",
     "test:unit": "vitest run",
     "test:snippets": "test-snippets",
@@ -60,6 +61,7 @@
     "tsup": "^7.2.0",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6",
+    "unlinted": "^2.0.0",
     "vitest": "^0.34.2"
   }
 }
